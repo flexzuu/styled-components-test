@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { injectGlobal } from 'styled-components';
+import { injectGlobal, ThemeProvider } from 'styled-components';
 import App from './App';
 
 // eslint-disable-next-line
@@ -11,8 +11,17 @@ injectGlobal`
     font-family: sans-serif;
   }
 `;
+const theme = {
+  primary: 'darkslategrey',
+  gradient: 'blurry_beach',
+};
+const Root = () => (
+  <ThemeProvider theme={theme} >
+    <App />
+  </ThemeProvider>
+)
 
 ReactDOM.render(
-  <App />,
+  <Root />,
   document.getElementById('root')
 );

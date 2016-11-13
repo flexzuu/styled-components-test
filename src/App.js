@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { generator } from 'uigradients';
+import { defaultTheme } from './Theme';
 import logo from './logo.svg';
 
 const rotate360 = keyframes`
@@ -12,15 +13,21 @@ const rotate360 = keyframes`
   }
 `;
 
-const Intro = styled.p`
+const P = styled.p`
+  color: ${({theme}) => theme.primary };
+`;
+P.defaultProps = defaultTheme;
+const Intro = styled(P)`
+  font-style: italic;
   font-size: large;
 `;
 const Header = styled.div`
-  ${generator({gradient: 'servquick'})}
+  ${({theme}) => generator({gradient: theme.gradient})}
   height: 150px;
   padding: 20px;
-  color: white;
+  color: ${({theme}) => theme.primary };
 `;
+Header.defaultProps = defaultTheme;
 const Logo = styled.img`
   height: 80px;
 `;
@@ -47,6 +54,7 @@ class App extends Component {
         <Intro>
           To get started, edit <code>src/App.js</code> and save to reload.
         </Intro>
+        <P>Content...</P>
       </Wrapper>
     );
   }
