@@ -3,7 +3,7 @@ jasmine.VERBOSE = true;
 jasmine.getEnv().addReporter(
     new jasmineReporters.JUnitXmlReporter({
         consolidateAll: true,
-        savePath: './results',
+        savePath: './reports',
         filePrefix: 'test-results'
     })
 );
