@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "jasmine-reporters": "^2.2.0",
     "react-scripts": "0.7.0"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
+    "report": "react-scripts test --env=jsdom --coverage --setupTestFrameworkScriptFile=reporter.js",
     "eject": "react-scripts eject"
   }
 }
